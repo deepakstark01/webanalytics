@@ -14,7 +14,7 @@ import { VscLocation } from "react-icons/vsc";
 import { BiUserCheck } from "react-icons/bi";
 import LoadingComponent from "../components/Loader";
 import loadingAnim from "../lotties/loader.json";
-import { requestOption } from "../components/cookieUtils";
+import { getCookie, requestOption } from "../components/cookieUtils";
 import { apiurl } from "./url";
 
 function Home() {
@@ -29,7 +29,7 @@ function Home() {
   const [projected_labels, setProjected_labels] = useState<any[]>([]);
   const [projected_counts, setProjected_counts] = useState<any[]>([]);
   useEffect(() => {
-    // const accessToken = getAccessToken();
+    const accessToken = getCookie('access_token');
     // console.log(accessToken);
     // const requestOptions : RequestInit =  {
     //   method: 'GET', // or 'POST' or other HTTP methods
@@ -41,6 +41,12 @@ function Home() {
     // };
     // const requestOptions = requestOption();
     // fetch(`${apiurl}/getuser`, requestOption("GET"))
+
+    if (!accessToken) {
+      alert("Please log in");
+      window.location.href = "/login";
+    }
+
     fetch(`${apiurl}/getuser`, requestOption('GET'))
       .then((res) => res.json())
       .then((data) => { 
