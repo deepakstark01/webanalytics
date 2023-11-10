@@ -1,0 +1,9 @@
+[data-column-id="column-TimeStamp"].rdt_TableCell {
+    /* background-color: orange; */
+    min-width: auto;
+  }
+
+[data-column-id="column-Email"].rdt_TableCell {
+    /* background-color: orange; */
+    min-width: auto;
+  }
