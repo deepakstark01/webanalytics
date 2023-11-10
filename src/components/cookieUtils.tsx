@@ -10,7 +10,7 @@ var myHeaders = new Headers();
 myHeaders.append("Authorization",`Bearer ${getCookie('access_token')}` );
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("access-control-allow-credentials", "true");
-myHeaders.append("Connection", "keep-alive");
+myHeaders.append("Access-Control-Allow-Headers", "*");
 const generateRequest = (method : string) => {
   const requestOp: RequestInit ={
     method,
