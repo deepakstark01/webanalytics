@@ -10,8 +10,8 @@ var myHeaders = new Headers();
 myHeaders.append("Authorization",`Bearer ${getCookie('access_token')}` );
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("access-control-allow-credentials", "true");
-myHeaders.append("Referer", "https://automartz.vercel.app/");
-myHeaders.append("Origin", "https://automartz.vercel.app");
+myHeaders.append("Referer", "https://webanalytic.vercel.app/");
+myHeaders.append("Origin", "https://webanalytic.vercel.app");
 myHeaders.append("Connection", "keep-alive");
 const generateRequest = (method : string) => {
   const requestOp: RequestInit ={
